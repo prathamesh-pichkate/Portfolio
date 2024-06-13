@@ -55,10 +55,10 @@ function Home() {
                     </p>
 
                     <div className='flex flex-row mt-4'>
-                        <a href="http://www.linkedin.com/in/prathamesh-pichkate1208" className="iconStyle"><LinkedInIcon style={iconStyle} /></a>
-                        <a href="https://wa.me/qr/AE4TWB43BQXVA1" className="iconStyle"><WhatsAppIcon style={iconStyle} /></a>
-                        <a href="https://www.instagram.com/prathameshpic?igsh=MW82dnBweXVzZHlrcQ==" className="iconStyle"><InstagramIcon style={iconStyle} /></a>
-                        <a href="https://twitter.com/Prathamesh_p128" className="iconStyle"><XIcon style={iconStyle} /></a>
+                        <a href={process.env.REACT_APP_LinkedInLink} className="iconStyle"><LinkedInIcon style={iconStyle} /></a>
+                        <a href={process.env.REACT_APP_Whatapp} className="iconStyle"><WhatsAppIcon style={iconStyle} /></a>
+                        <a href={process.env.REACT_APP_Instagram} className="iconStyle"><InstagramIcon style={iconStyle} /></a>
+                        <a href={process.env.REACT_APP_Twitter} className="iconStyle"><XIcon style={iconStyle} /></a>
                     </div>
                 </div>
             </div>

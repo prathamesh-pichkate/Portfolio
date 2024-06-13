@@ -12,10 +12,10 @@ function Footer() {
       <div className='flex flex-col items-center'>
         <h1 className='text-2xl font-bold'>Prathamesh Pichkate</h1>
         <div className='flex flex-row gap-2 '>
-          <a href="http://www.linkedin.com/in/prathamesh-pichkate1208"><LinkedInIcon fontSize="small" /></a>
-          <a href="https://wa.me/qr/AE4TWB43BQXVA1"><WhatsAppIcon fontSize="small" /></a>
-          <a href="https://www.instagram.com/prathameshpic?igsh=MW82dnBweXVzZHlrcQ=="><InstagramIcon fontSize="small" /></a>
-          <a href="https://twitter.com/Prathamesh_p128"><XIcon fontSize="small" /></a>
+          <a href={process.env.REACT_APP_LinkedInLink}><LinkedInIcon fontSize="small" /></a>
+          <a href={process.env.REACT_APP_Whatapp}><WhatsAppIcon fontSize="small" /></a>
+          <a href={process.env.REACT_APP_Instagram}><InstagramIcon fontSize="small" /></a>
+          <a href={process.env.REACT_APP_Twitter}><XIcon fontSize="small" /></a>
         </div>
       </div>
       <div className='text-center'>
