@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';  // Import Link from react-router-dom
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,10 +15,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import AdbIcon from '@mui/icons-material/Adb';
 import '@fontsource/titillium-web'; 
 
-const pages = ['Home', 'Skills', 'Blogs', 'Projects', 'Experience'];
-
-
-
+const pages = [
+  { name: 'Home', path: '/' },
+  { name: 'Skills', path: '/skills' },
+  { name: 'Blogs', path: '/blogs' },
+  { name: 'Projects', path: '/projects' },
+  { name: 'Experience', path: '/allExperience' }
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -40,7 +44,6 @@ function Navbar() {
     textDecoration: 'none',
     fontSize: '15px',
     padding: '.5em .8em',
-    
     '&::before, &::after': {
       content: '""',
       height: '10px',
@@ -80,8 +83,8 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="/"
+            component={Link} // Use Link for navigation
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -124,12 +127,14 @@ function Navbar() {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
                   <Typography
                     textAlign="center"
+                    component={Link} // Use Link for navigation
+                    to={page.path}
                     sx={navStyles}
                   >
-                    {page}
+                    {page.name}
                   </Typography>
                 </MenuItem>
               ))}
@@ -141,8 +146,8 @@ function Navbar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href="/"
+            component={Link} // Use Link for navigation
+            to="/"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -160,18 +165,19 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'center' }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.name}
                 onClick={handleCloseNavMenu}
-                href={`/${page.toLowerCase()}`}
+                component={Link} // Use Link for navigation
+                to={page.path}
                 sx={navStyles}
               >
-                {page}
+                {page.name}
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
-            <IconButton color="inherit" href= {process.env.REACT_APP_GithubLink}>
+            <IconButton color="inherit" href={process.env.REACT_APP_GithubLink}>
               <button 
                 className="flex gap-2 cursor-pointer text-white text-sm bg-gradient-to-r from-gray-800 to-black px-1 py-1 rounded-full border border-gray-600 hover:scale-105 duration-200 hover:text-gray-500 hover:border-gray-800 hover:from-black hover:to-gray-900">
                 <GitHubIcon style={{ color: 'white', height: "1.2rem", width: "1.2rem" }} />
