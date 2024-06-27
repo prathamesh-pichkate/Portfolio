@@ -7,7 +7,7 @@ import XIcon from '@mui/icons-material/X';
 function Footer() {
 
   return (
-   <div className='flex flex-row'>
+   <div className='flex flex-row position'>
      <div className='w-full h-auto flex flex-col gap-4 items-center py-4 bg-[#ededed] text-grey-500'>
       <div className='flex flex-col items-center'>
         <h1 className='text-2xl font-bold'>Prathamesh Pichkate</h1>
